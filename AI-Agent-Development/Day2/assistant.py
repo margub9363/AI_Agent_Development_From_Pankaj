@@ -26,4 +26,6 @@ while True:
         messages=messages
     )
     print(response.choices[0].message.content)
+    # Save the assistant response to the messages list
+    messages.append({"role": "assistant", "content": response.choices[0].message.content})
     print("-" * 80)
