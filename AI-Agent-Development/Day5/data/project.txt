@@ -1,0 +1,6 @@
+Project Name: CTS-Leela
+Project Duratoin: 5 years
+Lead Name: Rahman
+Team Size: 5
+Programming Language: Java
+Purpose: Act as a gateway for the Oracle DB, after this project no one is allowed to read data directly from DB, everyone has to use the api's available in our application

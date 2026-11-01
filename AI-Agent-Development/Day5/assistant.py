@@ -41,6 +41,36 @@ while True:
     # Save the user input to the messages list
 
     text = user_input.lower()
+
+    if text.startswith("ask"):
+        print("########################################################")
+        parts = user_input.split(maxsplit=2)
+        print(parts)
+        filename = parts[1]
+        question = parts[2]
+        file_content = read_read_text_file("data/" + filename)
+        prompt = f"""
+        You are given a document.
+        Answer the user's question using only the information provided in the document.
+
+        If the answer is not found in the document, say "I don't know".
+        """
+        response = client.chat.completions.create(
+                model=os.getenv("MODEL"),
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are a helpful assistant that summarizes documents."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ]
+            )
+        print(response.choices[0].message.content)
+        continue 
+    
     if text.startswith("summarize"):
         filename = user_input[10:].strip()
         file_content = read_read_text_file("data/" + filename)
