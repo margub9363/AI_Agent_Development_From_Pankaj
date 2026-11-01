@@ -26,3 +26,9 @@ print("--" * 40)
 
 score = cosine_similarity(embedding1, embedding2)
 print(score)
+
+def create_embedding(content):
+    embedding1 = client.embeddings.create(
+    model="nomic-embed-text",
+    input=text1).data[0].embedding
+    return embedding1
