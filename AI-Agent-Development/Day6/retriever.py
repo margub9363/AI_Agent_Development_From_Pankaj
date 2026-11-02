@@ -4,7 +4,9 @@ def load_docuemtns():
     documents = {}
     folder = Path("knowledge")
     for file in folder.glob("*.txt"):
+        print("^^^^^^^^^^^ " , file.name)
         documents[file.name] = file.read_text(encoding="utf-8")
+    print(documents)
     return documents
 
 def retreieve(question):

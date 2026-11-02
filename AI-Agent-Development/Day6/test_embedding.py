@@ -30,5 +30,5 @@ print(score)
 def create_embedding(content):
     embedding1 = client.embeddings.create(
     model="nomic-embed-text",
-    input=text1).data[0].embedding
+    input=content).data[0].embedding
     return embedding1
