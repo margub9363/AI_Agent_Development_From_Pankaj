@@ -4,15 +4,15 @@ import os
 import asyncio
 
 
-from mcp_client import(
+from .mcp_client import(
     connect,
     disconnect,
     discover_tools
 )
 
-from planner import planner
-from executor import execute_action
-from loop import run_agent_loop
+from .planner import planner
+from .executor import execute_action
+from .loop import run_agent_loop
 
 load_dotenv()
 

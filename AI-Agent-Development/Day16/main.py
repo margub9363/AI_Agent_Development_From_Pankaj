@@ -19,7 +19,7 @@ async def main():
     for tool in tools:
         print(tool.name)
     
-    graph = build_graph(tools)
+    graph = build_graph(tools, client)
 
     user_request = input("\nUser:")
 
@@ -29,11 +29,12 @@ async def main():
         "max_steps": 5,
         "actions": [],
         "observations": [],
+        "action": "",
         "finished": False,
         "final_answer": ""
     }
 
-    result = graph.invoke(initial_state)
+    result =await graph.ainvoke(initial_state)
 
     print("\nFinal State")
     print("-----------")

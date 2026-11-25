@@ -1,4 +1,4 @@
-from mcp_client import execute_tool
+from .mcp_client import execute_tool
 
 async def execute_action(action, client):
     result = await execute_tool(

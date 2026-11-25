@@ -4,6 +4,7 @@ class AgentState(TypedDict):
     user_request: str
     current_step: int
     max_steps: int
+    action: str
     actions: list
     observations: list
     finished: bool
