@@ -5,19 +5,6 @@ from agent.planner import planner
 from agent.executor import execute_action
 from agent.runner import format_answer
 
-def create_planner_node(tools):
-    def planner_node(state: AgentState):
-        action = planner(state, tools)
-        print("\nPlanner Selected:")
-        print(action)
-
-        return {
-            "action": action,
-            "finished": action == "FINISH"
-        }
-    return planner_node
-
-
 def build_graph(tools, client):
     builder = StateGraph(AgentState)
     planner_node=create_planner_node(tools)

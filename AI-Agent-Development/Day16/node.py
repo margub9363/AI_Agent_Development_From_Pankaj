@@ -8,13 +8,6 @@ def create_planner_node(tools):
         action = planner(state, tools)
         print("\n Planner Selected:")
         print(action)
-        # return {
-        #     "actions":state["actions"],
-        #     "observations":state["observations"],
-        #     "current_step":state["current_step"],
-        #     "finished":action == "FINISH", # This is changed now
-        #     "final_answer": state["final_answer"]
-        # }
         return {
             "action": action,
             "finished": action == "FINISH"
